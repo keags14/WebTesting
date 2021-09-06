@@ -174,10 +174,10 @@ namespace Selenium_Walkthrough
                 // wait to ensure a response
                 Thread.Sleep(5000);
                 //Assert that we are on the signing page
-                var image = driver.FindElement(By.Id("item_4_img_link"));
+                var image = driver.FindElement(By.TagName("img"));
                 Assert.That(driver.Url, Is.EqualTo("https://www.saucedemo.com/inventory.html"));
                 //Todo
-                //Assert.That(image.GetAttribute(), );
+                Assert.That(image.GetAttribute("src"), Is.EqualTo("https://www.saucedemo.com/static/media/sl-404.168b1cce.jpg"));
             }
         }
 
@@ -205,7 +205,6 @@ namespace Selenium_Walkthrough
                 // wait to ensure a response
                 Thread.Sleep(5000);
                 //Assert that we are on the signing page
-                //driver.Navigate().GoToUrl("https://www.saucedemo.com/inventory.html");
                 Assert.That(driver.Url, Is.EqualTo("https://www.saucedemo.com/inventory.html"));
             }
         }
