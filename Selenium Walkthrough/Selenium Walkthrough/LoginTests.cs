@@ -174,9 +174,10 @@ namespace Selenium_Walkthrough
                 // wait to ensure a response
                 Thread.Sleep(5000);
                 //Assert that we are on the signing page
-                driver.Navigate().GoToUrl("https://www.saucedemo.com/inventory.html");
-                var image = driver.FindElement(By.TagName("img"));
-                Assert.That(image.Enabled, Is.True);
+                var image = driver.FindElement(By.Id("item_4_img_link"));
+                Assert.That(driver.Url, Is.EqualTo("https://www.saucedemo.com/inventory.html"));
+                //Todo
+                //Assert.That(image.GetAttribute(), );
             }
         }
 
