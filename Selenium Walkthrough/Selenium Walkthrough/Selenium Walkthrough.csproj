@@ -82,6 +82,7 @@
     <Compile Include="LoginUserNameAndPaswordIsEmptyTest .cs" />
     <Compile Include="LoginWrongPasswordTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tests\SauceDemo_HomePage_Test.cs" />
     <Compile Include="tests\SauceDemo_Signin_Test.cs" />
   </ItemGroup>
   <ItemGroup>
