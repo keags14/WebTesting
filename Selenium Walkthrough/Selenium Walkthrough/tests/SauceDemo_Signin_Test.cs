@@ -134,7 +134,7 @@ namespace Selenium_Walkthrough.tests
             Thread.Sleep(5000);
             //Assert that we are on the signing page
             //driver.Navigate().GoToUrl("https://www.saucedemo.com/inventory.html");
-            //Assert.That(_website.SignInPage.Url, Is.EqualTo("https://www.saucedemo.com/inventory.html"));
+            Assert.That(_website.Driver.Url, Is.EqualTo("https://www.saucedemo.com/inventory.html"));
         }
     }
     

@@ -14,6 +14,7 @@ namespace Selenium_Walkthrough.lib.pages
             Driver = driver;
         }
 
+        #region Properties
         public IWebDriver Driver { get; }
 
         private string _url = AppConfigReader.InventoryPageUrl;
@@ -34,6 +35,27 @@ namespace Selenium_Walkthrough.lib.pages
 
         private IWebElement _appTitlePage => Driver.FindElement(By.ClassName("title"));
 
-        private IWebElement _peekImage => Driver.FindElement(By.ClassName("peek")); 
+        private IWebElement _peekImage => Driver.FindElement(By.ClassName("peek"));
+
+        private IWebElement _removeButton => Driver.FindElement(By.TagName("button")).FindElement(By.ClassName("btn btn_secondary btn_small btn_inventory"));
+        #endregion
+
+        #region Methods
+        public void VisitHomePage() => Driver.Navigate().GoToUrl(_url);
+
+        public bool GetFilterTextVisibility() => _filterButton.Displayed;
+
+        public bool GetAddToCartTextVisibility() => _addCartButton.Displayed;
+
+        public bool GetPriceTextVisibility() => _priceText.Displayed;
+
+        public bool GetNavigationBarVisibility() => _navigationMenuButton.Displayed;
+
+        public string GetRemoveText() => _removeButton.Text;
+
+        public string GetAddToCartText() => _addCartButton.Text;
+
+        public string GetPriceText() => _priceText.Text;
+        #endregion
     }
 }

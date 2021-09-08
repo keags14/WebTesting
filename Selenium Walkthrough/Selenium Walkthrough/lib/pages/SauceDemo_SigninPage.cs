@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using Selenium_Walkthrough.utitlities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,6 +30,12 @@ namespace Selenium_Walkthrough.lib.pages
         public void InputPassword(string password) => _passwordField.SendKeys(password);
         public void ClickSignin() => _loginButton.Click();
         public string GetErrorText() => _errorMessage.Text;
+
+        public void InputSigninCredentials(Credentials credentials)
+        {
+            _userNameField.SendKeys(credentials.Username);
+            _passwordField.SendKeys(credentials.Password);
+        }
         #endregion
     }
 }
